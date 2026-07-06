@@ -33,6 +33,14 @@ body {
   width: 100vw;
   max-width: 100%;
 }
+
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
 body::before {
   content: "";
   position: fixed;
@@ -776,7 +784,7 @@ footer {
     border-bottom: 1px solid var(--border);
     font-size: 13px;
   }
-  
+
   /* Scroll-to-top button visible only on mobile */
   .scroll-top-btn {
     display: flex;
