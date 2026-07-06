@@ -30,6 +30,8 @@ body {
   color: var(--text);
   min-height: 100vh;
   overflow-x: hidden;
+  width: 100vw;
+  max-width: 100%;
 }
 body::before {
   content: "";
@@ -657,6 +659,39 @@ footer {
   font-family: var(--mono);
 }
 
+/* SCROLL-TO-TOP BUTTON */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  width: 48px;
+  height: 48px;
+  background: var(--amber);
+  color: var(--bg);
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  transition: 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+.scroll-top-btn.visible {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+.scroll-top-btn:hover {
+  background: var(--amber2);
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.3);
+}
+
 /* REVEAL */
 .reveal {
   opacity: 0;
@@ -741,6 +776,11 @@ footer {
     border-bottom: 1px solid var(--border);
     font-size: 13px;
   }
+  
+  /* Scroll-to-top button visible only on mobile */
+  .scroll-top-btn {
+    display: flex;
+  }
 }
 @media (max-width: 600px) {
   .projects-grid {
@@ -753,6 +793,12 @@ footer {
     flex-direction: column;
     gap: 8px;
     text-align: center;
+  }
+}
+
+@media (min-width: 901px) {
+  .scroll-top-btn {
+    display: none;
   }
 }
 

@@ -11,8 +11,9 @@ function toggleLang() {
   document.querySelectorAll('[data-es]').forEach(el => {
     const val = el.getAttribute(`data-${lang}`);
     if (!val) return;
-    if (['A', 'BUTTON', 'SPAN'].includes(el.tagName)) el.textContent = val;
-    else el.innerHTML = val;
+    // Usar innerHTML si hay etiquetas HTML, textContent en caso contrario
+    if (val.includes('<')) el.innerHTML = val;
+    else el.textContent = val;
   });
 }
 
@@ -57,6 +58,22 @@ const sectionObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.4 });
 
 sections.forEach(section => sectionObserver.observe(section));
+
+// Botón scroll-to-top
+const scrollTopBtn = document.getElementById('scroll-top');
+const aboutSection = document.getElementById('about');
+
+window.addEventListener('scroll', () => {
+  if (aboutSection && window.scrollY >= aboutSection.offsetTop - 100) {
+    scrollTopBtn.classList.add('visible');
+  } else {
+    scrollTopBtn.classList.remove('visible');
+  }
+});
+
+scrollTopBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
 // Año de copyright dinámico
 const copyrightYear = document.getElementById('copyright-year');
