@@ -13,6 +13,7 @@
   --mono: "JetBrains Mono", monospace;
   --serif: "Playfair Display", Georgia, serif;
   --body: "Lora", Georgia, serif;
+  --sans: -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", sans-serif;
 }
 *,
 *::before,
@@ -144,6 +145,15 @@ section {
   padding: 100px clamp(20px, 5vw, 80px);
   max-width: 1200px;
   margin: 0 auto;
+}
+
+section#contact {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+section#projects {
+  padding-bottom: 20px;
 }
 
 /* HERO */
@@ -526,7 +536,7 @@ section {
   border-radius: 5px;
 }
 .proj-name {
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: 18px;
   font-weight: 700;
   color: var(--text);
@@ -537,7 +547,7 @@ section {
   color: var(--text2);
   line-height: 1.65;
   flex: 1;
-  font-family: var(--body);
+  font-family: var(--sans);
 }
 .proj-link {
   display: inline-flex;
@@ -671,8 +681,8 @@ footer {
 .scroll-top-btn {
   position: fixed;
   bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%) translateY(100px);
+  right: 20px;
+  transform: translateY(100px);
   width: 48px;
   height: 48px;
   background: var(--amber);
@@ -691,7 +701,7 @@ footer {
   pointer-events: none;
 }
 .scroll-top-btn.visible {
-  transform: translateX(-50%) translateY(0);
+  transform: translateY(0);
   opacity: 1;
   pointer-events: auto;
 }
