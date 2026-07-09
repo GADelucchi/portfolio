@@ -57,7 +57,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: var(--serif);
+  font-family: var(--sans);
   line-height: 1.05;
 }
 p {
@@ -324,7 +324,7 @@ section#projects {
 }
 
 .hero-name {
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: clamp(52px, 10vw, 108px);
   font-weight: 900;
   line-height: 0.95;
@@ -610,7 +610,7 @@ section#projects {
   );
 }
 .contact-title {
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: clamp(28px, 5vw, 54px);
   font-weight: 900;
   letter-spacing: -1px;
