@@ -1,0 +1,63 @@
+/* ==========================================================================
+   ABOUT — texto personal y grupos de skills
+   ========================================================================== */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.about-text {
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+.about-text strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.skills-group {
+  margin-bottom: 30px;
+}
+
+.skills-group h4 {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text3);
+  margin-bottom: 12px;
+}
+
+.skills-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--card2);
+  border: 1px solid var(--border);
+  color: var(--text2);
+  transition: 0.2s;
+}
+
+.chip:hover {
+  border-color: var(--amber);
+  color: var(--amber);
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

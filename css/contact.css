@@ -1,0 +1,144 @@
+/* ==========================================================================
+   CONTACT, FOOTER y botón "volver arriba"
+   ========================================================================== */
+
+.contact-wrap {
+  position: relative;
+  overflow: hidden;
+  padding: 60px;
+  text-align: center;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+}
+
+.contact-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 0%, rgba(245, 158, 11, 0.055) 0%, transparent 60%);
+}
+
+.contact-title {
+  font-size: clamp(28px, 5vw, 54px);
+  font-weight: 900;
+  letter-spacing: -1px;
+  margin-bottom: 14px;
+}
+
+.contact-subtitle {
+  max-width: 480px;
+  margin: 0 auto 48px;
+  font-size: 16px;
+}
+
+.contact-links {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border-radius: 12px;
+  border: 1.5px solid var(--border);
+  background: var(--card2);
+  color: var(--text2);
+  font-family: var(--body);
+  font-size: 15px;
+  font-weight: 500;
+  transition: 0.25s;
+}
+
+.contact-link:hover {
+  border-color: var(--amber);
+  color: var(--amber);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.12);
+}
+
+/* Footer */
+footer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 26px var(--page-gutter);
+  border-top: 1px solid var(--border);
+  font-family: var(--mono);
+}
+
+.footer-brand {
+  font-size: 13px;
+  color: var(--text3);
+}
+
+.footer-brand span {
+  color: var(--amber);
+}
+
+.footer-copy {
+  font-size: 12px;
+  color: var(--text3);
+}
+
+/* Botón volver arriba (solo mobile, ver js/scroll-top.js) */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  z-index: 50;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: var(--amber);
+  color: var(--bg);
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(100px);
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+.scroll-top-btn.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.scroll-top-btn:hover {
+  background: var(--amber2);
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.3);
+}
+
+@media (max-width: 900px) {
+  .scroll-top-btn {
+    display: flex;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-wrap {
+    padding: 36px 24px;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}

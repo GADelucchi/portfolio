@@ -1,0 +1,230 @@
+/* ==========================================================================
+   BASE — tokens de diseño, reset, layout general y componentes compartidos
+   ========================================================================== */
+
+:root {
+  /* Colores */
+  --bg: #07090f;
+  --card: #10151f;
+  --card2: #161d2a;
+  --border: #1c2537;
+  --amber: #f59e0b;
+  --amber2: #fbbf24;
+  --text: #eef2f8;
+  --text2: #7a8fa8;
+  --text3: #3d5068;
+
+  /* Forma */
+  --rad: 14px;
+  --nav-height: 64px;
+  --page-gutter: clamp(20px, 5vw, 80px);
+  --content-max: 1200px;
+
+  /* Tipografía */
+  --mono: "JetBrains Mono", monospace;
+  --body: "Lora", Georgia, serif;
+  --sans: -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", sans-serif;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--body);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* Grilla sutil de fondo */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(245, 158, 11, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245, 158, 11, 0.025) 1px, transparent 1px);
+  background-size: 52px 52px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--sans);
+  line-height: 1.05;
+}
+
+p {
+  line-height: 1.75;
+  color: var(--text2);
+  font-family: var(--body);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Layout */
+main {
+  position: relative;
+  z-index: 1;
+}
+
+section {
+  padding: 100px var(--page-gutter);
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+
+section#projects {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+section#contact {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* Encabezado de sección */
+.sec-header {
+  margin-bottom: 60px;
+}
+
+.sec-label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 12px;
+}
+
+.sec-title {
+  font-size: clamp(32px, 5vw, 54px);
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.sec-line {
+  width: 48px;
+  height: 3px;
+  background: var(--amber);
+  border-radius: 2px;
+  margin-top: 18px;
+}
+
+/* Botones */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  border-radius: 10px;
+  font-family: var(--body);
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.22s;
+}
+
+.btn-primary {
+  background: var(--amber);
+  color: var(--bg);
+}
+
+.btn-primary:hover {
+  background: var(--amber2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(245, 158, 11, 0.28);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text2);
+  border: 1.5px solid var(--border);
+}
+
+.btn-outline:hover {
+  border-color: var(--amber);
+  color: var(--amber);
+  transform: translateY(-2px);
+}
+
+/* WhatsApp: verde de marca para que el contacto directo destaque */
+.btn-whatsapp {
+  background: #25d366;
+  color: #04210f;
+}
+
+.btn-whatsapp:hover {
+  background: #3ee37b;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.28);
+}
+
+/* Animación de entrada al hacer scroll (ver js/reveal.js) */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Accesibilidad: foco visible solo para navegación con teclado */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Respeta la preferencia de menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

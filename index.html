@@ -14,14 +14,14 @@
   <meta property="og:title" content="Gastón Delucchi — Full Stack Developer" />
   <meta property="og:description"
     content="Portfolio de proyectos full-stack: sistemas de turnos, gestión de clínicas y más, construidos con Node.js, React y MySQL." />
-  <meta property="og:image" content="https://tuapp.onrender.com/assets/imgs/og-preview.png" />
-  <meta property="og:url" content="https://tuapp.onrender.com" />
+  <meta property="og:image" content="https://gadelucchi.ar/assets/imgs/og-preview.png" />
+  <meta property="og:url" content="https://gadelucchi.ar" />
 
   <!-- Twitter Card (por si comparten en X/Twitter) -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Gastón Delucchi — Full Stack Developer" />
   <meta name="twitter:description" content="Portfolio de proyectos full-stack: Node.js, React, MySQL." />
-  <meta property="twitter:image" content="https://tuapp.onrender.com/assets/imgs/og-preview.png" />
+  <meta property="twitter:image" content="https://gadelucchi.ar/assets/imgs/og-preview.png" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/imgs/favicon-512.png" />
@@ -34,13 +34,22 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="./index.css" />
+  <link rel="stylesheet" href="./css/base.css" />
+  <link rel="stylesheet" href="./css/nav.css" />
+  <link rel="stylesheet" href="./css/hero.css" />
+  <link rel="stylesheet" href="./css/about.css" />
+  <link rel="stylesheet" href="./css/projects.css" />
+  <link rel="stylesheet" href="./css/contact.css" />
 </head>
 
 <body>
+
+  <!-- Íconos reutilizables -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="icon-whatsapp" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </symbol>
+  </svg>
 
   <nav>
     <div class="nav-brand"><span>~/</span>GADelucchi</div>
@@ -80,9 +89,14 @@
             <span class="cursor"></span>
           </p>
           <div class="hero-ctas">
-            <a href="#projects" class="btn btn-primary" data-es="Ver proyectos" data-en="View projects">Ver
-              proyectos</a>
-            <a href="#contact" class="btn btn-outline" data-es="Contacto" data-en="Get in touch">Contacto</a>
+            <a href="#projects" class="btn btn-primary" data-es="Ver proyectos" data-en="View projects">Ver proyectos</a>
+            <a href="https://wa.me/5492216079500" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+              <svg width="18" height="18" aria-hidden="true"><use href="#icon-whatsapp" /></svg>
+              <span data-es="Escribime por WhatsApp" data-en="Message me on WhatsApp">Escribime por WhatsApp</span>
+            </a>
+            <a href="assets/cv/Gaston_Delucchi_CV_ES.pdf" download class="btn btn-outline"
+              data-href-es="assets/cv/Gaston_Delucchi_CV_ES.pdf" data-href-en="assets/cv/Gaston_Delucchi_CV_EN.pdf"
+              data-es="Descargar CV" data-en="Download CV">Descargar CV</a>
           </div>
         </div>
       </div>
@@ -108,154 +122,19 @@
           </p>
         </div>
         <div class="reveal">
-          <div class="skills-group">
-            <h4 data-es="Frontend" data-en="Frontend">Frontend</h4>
-            <div class="skills-chips">
-              <span class="chip">React</span><span class="chip">Vite</span>
-              <span class="chip">HTML5</span><span class="chip">CSS3</span>
-              <span class="chip">JavaScript</span>
-            </div>
-          </div>
-          <div class="skills-group">
-            <h4 data-es="Backend" data-en="Backend">Backend</h4>
-            <div class="skills-chips">
-              <span class="chip">Node.js</span><span class="chip">Express.js</span>
-              <span class="chip">NestJS</span><span class="chip">Java</span>
-              <span class="chip">Spring Boot</span><span class="chip">REST APIs</span>
-            </div>
-          </div>
-          <div class="skills-group">
-            <h4 data-es="Base de datos" data-en="Database">Base de datos</h4>
-            <div class="skills-chips">
-              <span class="chip">MySQL</span><span class="chip">MongoDB</span>
-              <span class="chip">TypeORM</span><span class="chip">Sequelize</span>
-            </div>
-          </div>
-          <div class="skills-group">
-            <h4 data-es="Herramientas" data-en="Tools">Herramientas</h4>
-            <div class="skills-chips">
-              <span class="chip">Git</span><span class="chip">GitHub</span>
-              <span class="chip">Docker</span><span class="chip">Render</span>
-              <span class="chip">Cloudflare</span>
-            </div>
-          </div>
+          <div id="skills"></div>
         </div>
       </div>
     </section>
 
-    <section id="projects" style="padding-top:10">
+    <section id="projects">
       <div class="sec-header reveal">
         <span class="sec-label" data-es="02 — Proyectos" data-en="02 — Projects">02 — Proyectos</span>
         <h2 class="sec-title" data-es="Mi trabajo" data-en="My work">Mi trabajo</h2>
         <div class="sec-line"></div>
       </div>
-      <div class="projects-grid">
-
-        <div class="proj-card reveal">
-          <div class="proj-thumb t1">🗓️</div>
-          <div class="proj-body">
-            <div class="proj-tags"><span class="proj-tag">React</span><span class="proj-tag">NestJS</span><span
-                class="proj-tag">MySQL</span></div>
-            <div class="proj-name" data-es="Turnero Dr. Delucchi" data-en="Dr. Delucchi Booking">Turnero Dr. Delucchi
-            </div>
-            <p class="proj-desc"
-              data-es="Sistema de turnos médicos online para consultorio psiquiátrico. Verificación OTP por WhatsApp, panel privado para médicos y recepción, recordatorios automáticos y bloqueo de fechas."
-              data-en="Online appointment system for a psychiatric practice. WhatsApp OTP verification, private panels for doctors and reception staff, automatic reminders and date blocking.">
-              Sistema de turnos médicos online para consultorio psiquiátrico. Verificación OTP por WhatsApp, panel
-              privado para médicos y recepción, recordatorios automáticos y bloqueo de fechas.
-            </p>
-            <a href="https://elpsiquiatra.ar" target="_blank" rel="noopener noreferrer" class="proj-link"
-              data-es="Ver proyecto" data-en="View project">Ver proyecto</a>
-          </div>
-        </div>
-
-        <div class="proj-card reveal">
-          <div class="proj-thumb t2">🔐</div>
-          <div class="proj-body">
-            <div class="proj-tags"><span class="proj-tag">HTML</span><span class="proj-tag">CSS</span><span
-                class="proj-tag">JavaScript</span><span class="proj-tag">Node.js</span></div>
-            <div class="proj-name">Cerratex</div>
-            <p class="proj-desc"
-              data-es="Carrito de compras para fábrica de cerraduras. El pedido se envía automáticamente por email al vendedor con los datos del cliente y el detalle del carrito para continuar la venta."
-              data-en="Shopping cart for a lock manufacturer. On checkout, the order is automatically emailed to the sales rep with customer info and cart details to close the sale.">
-              Carrito de compras para fábrica de cerraduras. El pedido se envía automáticamente por email al vendedor
-              con los datos del cliente y el detalle del carrito para continuar la venta.
-            </p>
-            <a href="https://www.cerratex.com.ar" target="_blank" rel="noopener noreferrer" class="proj-link"
-              data-es="Ver proyecto" data-en="View project">Ver proyecto</a>
-          </div>
-        </div>
-
-        <div class="proj-card reveal">
-          <div class="proj-thumb t3">✨</div>
-          <div class="proj-body">
-            <div class="proj-tags"><span class="proj-tag">React</span><span class="proj-tag">Vite</span><span
-                class="proj-tag">Node.js</span><span class="proj-tag">MySQL</span></div>
-            <div class="proj-name">MAB Estética</div>
-            <p class="proj-desc"
-              data-es="Plataforma de gestión para cosmetóloga. Fichas clínicas y diarias de pacientes, sistema de turnos y catálogo de productos. Panel de administración completo."
-              data-en="Management platform for a cosmetologist. Clinical and daily patient records, appointment system and product catalog. Full admin panel.">
-              Plataforma de gestión para cosmetóloga. Fichas clínicas y diarias de pacientes, sistema de turnos y
-              catálogo de productos. Panel de administración completo.
-            </p>
-            <a href="https://www.mabestetica.onrender.com" target="_blank" rel="noopener noreferrer" class="proj-link"
-              data-es="Ver proyecto" data-en="View project">Ver proyecto</a>
-          </div>
-        </div>
-
-        <div class="proj-card reveal">
-          <div class="proj-thumb t4">💱</div>
-          <div class="proj-body">
-            <div class="proj-tags"><span class="proj-tag">HTML</span><span class="proj-tag">CSS</span><span
-                class="proj-tag">JavaScript</span></div>
-            <div class="proj-name" data-es="Calculadora dólar blue" data-en="Blue Dollar Calculator">Calculadora dólar
-              blue</div>
-            <p class="proj-desc"
-              data-es="Herramienta interna para convertir precios en dólares a pesos. Aplica un spread sobre el dólar blue y calcula intereses automáticamente según el método de pago seleccionado."
-              data-en="Internal tool for converting USD prices to pesos. Applies a spread on the blue dollar rate and automatically calculates interest based on the selected payment method.">
-              Herramienta interna para convertir precios en dólares a pesos. Aplica un spread sobre el dólar blue y
-              calcula intereses automáticamente según el método de pago seleccionado.
-            </p>
-            <a href="https://calculadoraapple.onrender.com" target="_blank" rel="noopener noreferrer" class="proj-link"
-              data-es="Ver demo" data-en="View demo">Ver demo</a>
-          </div>
-        </div>
-
-        <div class="proj-card reveal">
-          <div class="proj-thumb t5">🎡</div>
-          <div class="proj-body">
-            <div class="proj-tags"><span class="proj-tag">HTML Canvas</span><span class="proj-tag">JavaScript</span>
-            </div>
-            <div class="proj-name" data-es="Ruleta de premios" data-en="Prize Wheel">Ruleta de premios</div>
-            <p class="proj-desc"
-              data-es="Ruleta interactiva con animación física y detección precisa del sector ganador. Personalizable en colores, sectores y premios. Ideal para sorteos y eventos."
-              data-en="Interactive prize wheel with physics-based animation and accurate winning sector detection. Customizable colors, sectors, and prizes. Ideal for draws and events.">
-              Ruleta interactiva con animación física y detección precisa del sector ganador. Personalizable en colores,
-              sectores y premios. Ideal para sorteos y eventos.
-            </p>
-            <a href="https://ruleta-di51.onrender.com" target="_blank" rel="noopener noreferrer" class="proj-link"
-              data-es="Ver demo" data-en="View demo">Ver demo</a>
-          </div>
-        </div>
-
-        <div class="proj-card reveal">
-          <div class="proj-thumb t6">🏥</div>
-          <div class="proj-body">
-            <div class="proj-tags"><span class="proj-tag">React</span><span class="proj-tag">Node.js</span><span
-                class="proj-tag">MySQL</span></div>
-            <div class="proj-name" data-es="Agisad" data-en="Agisad">Agisad</div>
-            <p class="proj-desc"
-              data-es="Plataforma SaaS de turnos online para profesionales de la salud, con gestión de disponibilidad, recordatorios automáticos y panel administrativo multi-profesional."
-              data-en="Healthcare SaaS platform for online appointment scheduling for health professionals, featuring availability management, automated reminders, and a multi-professional admin panel.">
-              Plataforma SaaS de turnos online para profesionales de la salud, con gestión de disponibilidad,
-              recordatorios automáticos y panel administrativo multi-profesional.
-            </p>
-            <a href="https://agisad.ar" target="_blank" rel="noopener noreferrer" class="proj-link"
-              data-es="Ver proyecto" data-en="View project">Ver proyecto</a>
-          </div>
-        </div>
-
-      </div>
+      <!-- Tarjetas generadas desde js/data/projects.js -->
+      <div class="projects-grid" id="projects-grid"></div>
     </section>
 
     <section id="contact">
@@ -282,10 +161,7 @@
             LinkedIn
           </a>
           <a href="https://wa.me/5492216079500" target="_blank" rel="noopener noreferrer" class="contact-link">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-            </svg>
+            <svg width="20" height="20" aria-hidden="true"><use href="#icon-whatsapp" /></svg>
             WhatsApp
           </a>
           <a href="mailto:gdelucchi@me.com" class="contact-link">
@@ -304,12 +180,13 @@
 
   <footer>
     <div class="footer-brand"><span>GAD</span>elucchi</div>
+    <div class="footer-copy">&copy; <span id="copyright-year"></span> Gastón Delucchi</div>
   </footer>
 
   <!-- Botón scroll-to-top -->
   <button id="scroll-top" class="scroll-top-btn" aria-label="Volver al inicio">↑</button>
 
-  <script src="index.js" defer></script>
+  <script type="module" src="./js/main.js"></script>
 </body>
 
 </html>

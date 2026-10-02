@@ -1,0 +1,175 @@
+/* ==========================================================================
+   PROJECTS — grilla de tarjetas (generadas desde js/data/projects.js)
+   ========================================================================== */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.proj-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--rad);
+  transition: 0.3s;
+}
+
+.proj-card:hover {
+  border-color: var(--amber);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(245, 158, 11, 0.1);
+}
+
+/* Miniatura: emoji sobre un degradé según el tema (ver .proj-thumb--*) */
+.proj-thumb {
+  position: relative;
+  height: 158px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-size: 46px;
+}
+
+.proj-thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, var(--card));
+}
+
+.proj-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+.proj-thumb--blue   { background: linear-gradient(135deg, #0c1f3a, #1a3a6b); }
+.proj-thumb--amber  { background: linear-gradient(135deg, #1a1208, #3d2a08); }
+.proj-thumb--purple { background: linear-gradient(135deg, #100a1a, #2d1060); }
+.proj-thumb--green  { background: linear-gradient(135deg, #0a1a0c, #163018); }
+.proj-thumb--orange { background: linear-gradient(135deg, #1a0f00, #3a2200); }
+.proj-thumb--teal   { background: linear-gradient(135deg, #0a1f1f, #1a4d4d); }
+.proj-thumb--cyan   { background: linear-gradient(135deg, #05121a, #0b3a4a); }
+.proj-thumb--rose   { background: linear-gradient(135deg, #1a0a10, #4a1428); }
+
+.proj-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 22px;
+}
+
+.proj-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 2px;
+}
+
+.proj-tag {
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  color: var(--amber);
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.15);
+}
+
+.proj-name {
+  font-family: var(--sans);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+.proj-desc {
+  flex: 1;
+  font-family: var(--sans);
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--text2);
+}
+
+.proj-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  margin-top: 12px;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--amber);
+  transition: 0.2s;
+}
+
+.proj-link::after {
+  content: "→";
+}
+
+.proj-link:hover {
+  gap: 10px;
+}
+
+/* Proyectos destacados: más altos y con un halo ámbar que "ilumina" desde atrás */
+.proj-card--featured {
+  border-color: rgba(245, 158, 11, 0.55);
+  box-shadow:
+    0 0 0 1px rgba(245, 158, 11, 0.25),
+    0 0 36px rgba(245, 158, 11, 0.22),
+    0 0 90px rgba(245, 158, 11, 0.1);
+  animation: halo-pulse 4s ease-in-out infinite alternate;
+}
+
+.proj-card--featured .proj-thumb {
+  height: 200px;
+}
+
+.proj-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  padding: 4px 10px;
+  border-radius: 100px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--bg);
+  background: var(--amber);
+}
+
+@keyframes halo-pulse {
+  to {
+    box-shadow:
+      0 0 0 1px rgba(245, 158, 11, 0.35),
+      0 0 52px rgba(245, 158, 11, 0.3),
+      0 0 110px rgba(245, 158, 11, 0.14);
+  }
+}
+
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
