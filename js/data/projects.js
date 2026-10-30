@@ -67,7 +67,7 @@ export const projects = [
       en: 'Institutional website for a Colombian foundation protecting the human rights of girls, boys, teenagers and women. Work areas, the TRAMA platform, volunteering and donations.',
     },
     // URL provisoria
-    url: 'https://proyectoredh.onrender.com/',
+    url: 'https://fundacionredh.org/',
     linkLabel: 'project',
   },
   {
@@ -94,6 +94,19 @@ export const projects = [
       en: 'Shopping cart for a lock manufacturer. On checkout, the order is automatically emailed to the sales rep with customer info and cart details to close the sale.',
     },
     url: 'https://www.cerratex.com.ar',
+    linkLabel: 'project',
+  },
+  {
+    icon: '🏠',
+    image: 'assets/imgs/projects/renova.webp',
+    theme: 'orange',
+    tags: ['HTML', 'CSS', 'JavaScript'],
+    name: { es: 'Renová tu hogar', en: 'Renová tu hogar' },
+    description: {
+      es: 'Sitio institucional para una empresa de remodelaciones en CABA y Gran Buenos Aires. Servicios, galería de obras con antes y después, proceso de trabajo, testimonios y formulario de contacto que envía la consulta por WhatsApp.',
+      en: 'Business website for a home renovation company in Buenos Aires. Services, project gallery with before and after photos, work process, testimonials and a contact form that sends the inquiry via WhatsApp.',
+    },
+    url: 'https://renovatuhogar.ar/',
     linkLabel: 'project',
   },
   {
